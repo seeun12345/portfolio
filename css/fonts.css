@@ -1,0 +1,43 @@
+@charset "utf-8";
+@font-face {
+  font-family: "NotoSansKR";
+  src: url("../fonts/NotoSansKR-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NotoSansKR";
+  src: url("../fonts/NotoSansKR-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SUITE";
+  src: url("../fonts/SUITE-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SUITE";
+  src: url("../fonts/SUITE-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SUITE";
+  src: url("../fonts/SUITE-Heavy.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "HakgyoansimMabeopsa";
+  src: url("../fonts/HakgyoansimMabeopsaR.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Magnolia";
+  src: url("../fonts/Magnolia.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}

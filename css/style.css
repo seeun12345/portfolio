@@ -1,0 +1,486 @@
+@charset "utf-8";
+/*************** variable ***************/
+
+:root {
+  --firstColor: #2cf71a;
+  --secondColor: #f609eb;
+  --subColor: #0000f1;
+}
+
+/*************** reset ***************/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #111;
+}
+img {
+  vertical-align: middle;
+}
+
+/*************** common ***************/
+
+html {
+  overflow: hidden;
+}
+@media all and (max-width: 680px) {
+  html {
+    overflow-y: auto;
+  }
+}
+body {
+  cursor: none;
+}
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+section {
+  width: 100%;
+  height: 100vh;
+}
+::selection {
+  background-color: var(--subColor);
+  color: #fff;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+  background-color: #ddd;
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--subColor);
+  border-radius: 10px;
+}
+h3 {
+  font-family: "SUITE";
+  font-size: 100px;
+  font-weight: 900;
+}
+p {
+  font-family: "NotoSansKR";
+  font-size: 26px;
+  font-weight: 700;
+}
+i {
+  font-style: normal;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: -0.72px;
+  font-family: "NotoSansKR";
+}
+.animated-title {
+  position: relative;
+  overflow: hidden;
+  height: 473px;
+  padding-top: 50px;
+}
+.animated-title .track {
+  position: absolute;
+  right: 0;
+  display: flex;
+  width: 100%;
+  bottom: 0;
+}
+.animated-title .track .content {
+  font-family: "Magnolia";
+  font-size: 300px;
+  color: #fff;
+  font-style: italic;
+  opacity: 0.15;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/*************** header ***************/
+
+#header {
+  width: 100%;
+  background-color: transparent;
+  z-index: 999;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100px;
+}
+#header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+#header .logo {
+  width: 125px;
+  height: 33px;
+  font-size: 0;
+  position: relative;
+}
+#header .logo a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: none;
+  background: url("../images/logo.svg") no-repeat center center / 99%;
+}
+#header.on .logo a {
+  background: url("../images/logo-w.svg") no-repeat center center / 99%;
+}
+#header .logo a img {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+#header nav ul {
+  display: flex;
+  gap: 45px;
+}
+#header nav ul li a {
+  display: block;
+  font-family: "SUITE", MalgunGothic, "Malgun Gothic", sans-serif;
+  font-size: 18px;
+  padding: 0 5px;
+  transition: 0.3s ease;
+  border-radius: 5px;
+  cursor: none;
+  transition: 0.9s;
+}
+#header nav ul li a.active {
+  background-color: #000;
+  color: #fff;
+}
+#header.on nav ul li a {
+  color: #fff;
+  transition: 0.9s;
+}
+#header.on nav ul li a.active {
+  background-color: #fff;
+  color: #000;
+}
+
+/*************** main ***************/
+
+/* cursor */
+
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+.cursor-wrap {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #f7055b;
+  transform: translate(-50%, -50%);
+  transition: 0.2s ease-out;
+}
+.cursor-wrap.on {
+  background-color: #18ffe8;
+  transform: translate(-50%, -50%) scale(1.7);
+  transition: 0.2s ease-in;
+}
+
+/* visual */
+
+/* text-wrap */
+
+#visual .text-wrap div span {
+  font-family: "HakgyoansimMabeopsa", sans-serif;
+  font-size: 140px;
+  font-weight: 400;
+  position: relative;
+  display: inline-block;
+}
+.logo .logoflip {
+  position: absolute;
+  opacity: 1;
+}
+#visual .text-wrap .logoflip {
+  z-index: -1;
+  position: absolute;
+  opacity: 0;
+}
+#visual .text-wrap .leaf2 {
+  width: 35px;
+  height: 31px;
+}
+#visual .text-wrap .flower2 {
+  width: 25px;
+  height: 25px;
+}
+.logo .leaf2 {
+  width: 35px;
+  height: 30px;
+  top: 3.5%;
+  left: 25.5%;
+}
+.logo .flower2 {
+  width: 25px;
+  height: 25px;
+  left: 29.5%;
+  top: -42%;
+}
+
+/* label-wrap */
+
+#visual .container {
+  position: relative;
+}
+#visual .label-wrap .sticker {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+}
+#visual .label-wrap .html {
+  top: 23%;
+  right: 7%;
+}
+#visual .label-wrap .css {
+  top: 14%;
+  right: 34%;
+}
+#visual .label-wrap .js {
+  top: 61%;
+  right: 10%;
+}
+#visual .label-wrap .html .sticker-img {
+  background: url("../images/htmllable.png") no-repeat center center / cover;
+}
+#visual .label-wrap .css .sticker-img {
+  background: url("../images/csslable.png") no-repeat center center / cover;
+}
+#visual .label-wrap .js .sticker-img {
+  background: url("../images/jslable.png") no-repeat center center / cover;
+}
+#visual .scroll-arrow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10%;
+  text-align: center;
+}
+#visual .scroll-arrow i {
+  font-family: "SUITE";
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+#visual .scroll-arrow img {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+/* about */
+
+#about .container {
+  position: relative;
+}
+
+/* intro-wrap */
+
+#about .intro-wrap {
+  flex: 1;
+}
+#about .intro-wrap h3:last-of-type {
+  margin-bottom: 20px;
+}
+#about .intro-wrap i {
+  display: block;
+  margin-bottom: 55px;
+}
+#about .intro-wrap button {
+  display: block;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: none;
+  position: relative;
+  display: flex;
+  gap: 20px;
+}
+#about .intro-wrap button .circle {
+  width: 27px;
+  height: 27px;
+  background-color: var(--secondColor);
+  border-radius: 50%;
+  position: relative;
+}
+#about .intro-wrap button .circle span {
+  position: absolute;
+  background-color: var(--firstColor);
+  transform: translate(-52%, -51%);
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  display: block;
+  transition: 0.2s ease-in;
+}
+#about .intro-wrap button:hover .circle span {
+  width: 28px;
+  height: 28px;
+}
+#about .intro-wrap button a {
+  cursor: none;
+  font-family: "NotoSansKR";
+  font-weight: 700;
+  font-size: 0;
+}
+#about .intro-wrap button a span {
+  font-size: 18px;
+  display: inline-block;
+}
+#about .intro-wrap button:hover a span {
+  animation: wave 1s ease-in-out;
+  animation-iteration-count: 1;
+}
+@keyframes wave {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+#about .intro-wrap button a span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+#about .intro-wrap button a span:nth-child(2) {
+  animation-delay: 0.12s;
+}
+#about .intro-wrap button a span:nth-child(3) {
+  animation-delay: 0.15s;
+}
+#about .intro-wrap button a span:nth-child(4) {
+  animation-delay: 0.18s;
+}
+#about .intro-wrap button a span:nth-child(5) {
+  animation-delay: 0.21s;
+}
+#about .intro-wrap button a span:nth-child(6) {
+  animation-delay: 0.24s;
+}
+#about .intro-wrap button a span:nth-child(7) {
+  animation-delay: 0.27s;
+}
+#about .intro-wrap button a span:nth-child(8) {
+  animation-delay: 0.3s;
+}
+
+/* value-wrap */
+
+#about .value-wrap {
+  flex: 1;
+}
+#about .value-wrap .value-box {
+  padding: 40px 0;
+  border-top: 1px solid #000;
+}
+#about .value-wrap .value-box:last-child {
+  border-bottom: 1px solid #000;
+}
+#about .value-wrap .value-box p {
+  display: inline-block;
+  margin-bottom: 23px;
+}
+#about .value-wrap .value-box p:first-of-type {
+  font-family: "SUITE";
+  color: var(--secondColor);
+  margin-right: 60px;
+  line-height: 37px;
+}
+#about .value-wrap .value-box:last-child p:first-of-type {
+  margin-right: 54px;
+}
+#about .value-wrap .value-box i {
+  display: block;
+  padding-left: 130px;
+}
+
+/* symbol */
+
+#about .symbol {
+  position: absolute;
+}
+#about .symbol .ball {
+  position: absolute;
+  bottom: 0;
+  width: 170px;
+  height: 170px;
+  transform: translateZ(0);
+}
+#about .symbol .dream {
+  background: url("../images/dream.png") no-repeat center center / cover;
+  animation: rotate 5s linear forwards infinite;
+}
+#about .symbol .goal {
+  background: url("../images/goal.png") no-repeat center center / cover;
+  animation: rotate 5s linear forwards infinite;
+}
+#about .symbol .figure {
+  background: url("../images/figure.png") no-repeat center center / cover;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* work1 */
+
+#work1 {
+  background-color: #000;
+}
+
+/* work2 */
+
+#work2 {
+  background-color: #000;
+}
+#work2 .animated-title .track .content {
+  opacity: 0.3;
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+}
+
+/* work3 */
+
+#work3 {
+  background-color: #000;
+}
+
+/* work4 */
+
+/* contact */
+
+#contact {
+  background-color: #000;
+}
